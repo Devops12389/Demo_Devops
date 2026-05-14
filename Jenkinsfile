@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven3'
-    }
-
     environment {
         APP_NAME = "java-api"
     }
@@ -20,7 +16,7 @@ pipeline {
 
         stage('Build Application') {
             steps {
-                bat 'mvn clean install'
+                bat ' C:\Program Files\maven\apache-maven-3.9.15\bin\mvn.cmd clean package'
             }
         }
 
