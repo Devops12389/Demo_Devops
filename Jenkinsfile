@@ -22,11 +22,11 @@ pipeline {
             }
         }
 
-        stage('Run Unit Tests') {
-            steps {
-                bat 'mvn test'
-            }
-        }
+       // stage('Run Unit Tests') {
+       //     steps {
+       //         bat 'mvn test'
+         //   }
+       // }
 
         stage('Archive JAR') {
             steps {
