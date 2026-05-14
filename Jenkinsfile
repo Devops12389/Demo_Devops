@@ -18,7 +18,7 @@ pipeline {
             steps {
                 //bat '"C:\\Program Files\\maven\\apache-maven-3.9.15\\bin\\mvn.cmd" clean package' //
                 bat 'javac LoginServer.java'
-                bat 'java LoginServer'
+                bat 'java LoginServer && sleep 10 && exit'
             }
         }
 
