@@ -25,9 +25,20 @@ public class BookControllerTest {
 
     @Test
     void getBook_returnsJson() throws Exception {
-        given(service.getBookById(1L)).willReturn(new Book(new Book(), "Title"));
+        Book book = new Book();
+        book.setId(1L);
+        book.setTitle("Title");
+        book.setDescription("Demo Description");
+        book.setGenre("Technology");
+        book.setPublication_date("2026");
+    
+        given(service.getBookById(1L)).willReturn(book);
+    
+       /* mockMvc.perform(get("/books/1"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.title").value("Title"));
 
-     /*   mockMvc.perform(get("/books/1"))
+        mockMvc.perform(get("/books/1"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.title").value("Title"));*/
     }
