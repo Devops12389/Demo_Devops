@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        APP_NAME = "java-api"
+        APP_NAME = "bookstore-api"
     }
 
     stages {
@@ -16,9 +16,7 @@ pipeline {
 
         stage('Build Application') {
             steps {
-                //bat '"C:\\Program Files\\maven\\apache-maven-3.9.15\\bin\\mvn.cmd" clean package' //
-                bat 'javac LoginServer.java'
-                bat 'start /B java LoginServer'
+                bat '"C:\\Program Files\\maven\\apache-maven-3.9.15\\bin\\mvn.cmd" -f BookStoreAPI clean package -DskipTests'
             }
         }
 
